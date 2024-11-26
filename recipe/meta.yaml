@@ -1,4 +1,7 @@
-{% set version = "1.0.0" %}
+{% set version = "1.0.1" %}
+
+{% set python_min = python_min | default("3.9") %}
+
 {% if 1 %}{% set jupyterlab = "jupyterlab >=4.2.0,<5" %}{% endif %}
 
 package:
@@ -7,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/j/jupyter-collaboration-ui/jupyter_collaboration_ui-{{ version }}.tar.gz
-  sha256: 853c9498bcd1bdec4d4d9c53bf831b7e59be3935bd8f41d178ba4026e93f5a76
+  sha256: 99f407ca9910a9dacae2d07021b810b7e2e94e954b26b3bb8f14a2443e49e5cd
 
 build:
   noarch: python
@@ -19,18 +22,19 @@ requirements:
     - {{ jupyterlab }}
     - hatch-jupyter-builder
     - hatchling >=1.4.0
-    - python >=3.8
     - pip
+    - python {{ python_min }}
   run:
-    - python >=3.8
+    - python >={{ python_min }}
   run_constrained:
     - {{ jupyterlab }}
 
 test:
   requires:
-    - pip
     - jupyterlab
     - m2-grep  # [win]
+    - pip
+    - python {{ python_min }}
   imports:
     - jupyter_collaboration_ui
   commands:
