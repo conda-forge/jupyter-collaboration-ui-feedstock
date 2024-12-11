@@ -1,4 +1,4 @@
-{% set version = "1.0.1" %}
+{% set version = "1.1.0" %}
 
 {% set python_min = python_min | default("3.9") %}
 
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/j/jupyter-collaboration-ui/jupyter_collaboration_ui-{{ version }}.tar.gz
-  sha256: 99f407ca9910a9dacae2d07021b810b7e2e94e954b26b3bb8f14a2443e49e5cd
+  sha256: e536ca0bace1555bfabda7b05252f6ed93fdd51fa07bfeb014170a6c69553070
 
 build:
   noarch: python
