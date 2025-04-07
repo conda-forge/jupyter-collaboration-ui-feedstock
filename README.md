@@ -9,7 +9,7 @@ Package license: BSD-3-Clause
 
 Summary: JupyterLab/Jupyter Notebook 7+ extension providing user interface integration for real time collaboration
 
-Documentation: https://jupyterlab-realtime-collaboration.readthedocs.io
+Documentation: https://jupyterlab-realtime-collaboration.readthedocs.io/
 
 Current build status
 ====================
