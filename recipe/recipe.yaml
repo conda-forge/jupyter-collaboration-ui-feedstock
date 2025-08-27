@@ -41,14 +41,10 @@ tests:
   - requirements:
       run:
         - jupyterlab
-        - if: win
-          then: m2-grep
-        - python ${{ python_min }}
     script:
       - pip check
-      - jupyter labextension list
-      - jupyter labextension list 1>labextensions 2>&1
-      - grep -iE "collaboration-extension.*OK" labextensions
+      - jupyter labextension list --debug
+      - jupyter labextension list --debug 2>&1 | python -c "import re, sys; v = sys.stdin.read(); assert re.search(r'collaboration-extension.*OK', v)"
 
 about:
   summary: JupyterLab/Jupyter Notebook 7+ extension providing user interface integration for real time collaboration
