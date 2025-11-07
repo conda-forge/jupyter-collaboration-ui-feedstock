@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: "1.1.1"
+  version: "1.1.2"
 
 package:
   name: jupyter-collaboration-ui
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/j/jupyter-collaboration-ui/jupyter_collaboration_ui-${{ version }}.tar.gz
-  sha256: b7f7a8850a86237bd4285df1c373bfa8d5dc58fa8bb0be8de6a4e9665fbde9d2
+  sha256: 5f4128379da255f121da9edee204f17311c8d021005a25d3996d22f95a8645ff
 
 build:
   number: 0
