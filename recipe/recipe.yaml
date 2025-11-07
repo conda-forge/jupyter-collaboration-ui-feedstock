@@ -34,6 +34,9 @@ tests:
       python_version:
         - ${{ python_min }}.*
         - 3.14.*
+  - requirements:
+    run:
+      - jupyterlab
     script:
       - pip check
       - jupyter labextension list --debug
