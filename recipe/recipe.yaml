@@ -2,8 +2,10 @@
 schema_version: 1
 
 context:
-  version: "2.1.2"
-  jupyterlab: jupyterlab >=4.4.0,<5
+  version: "2.2.0"
+  jupyterlab_min: "4.4.0"
+  jupyterlab_max: "5"
+  python_check_max: "3.14"
 
 package:
   name: jupyter-collaboration-ui
@@ -11,7 +13,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/j/jupyter-collaboration-ui/jupyter_collaboration_ui-${{ version }}.tar.gz
-  sha256: 11a8dd734008e3b02dc4b516e31c31099c371bfd5a88a09af0c9e1edb62ad34b
+  sha256: 6501c1559ff2331584fa183c38b2334c1886761e71cbe0af8d5f525f25ea336d
 
 build:
   number: 0
@@ -21,7 +23,7 @@ build:
 
 requirements:
   host:
-    - ${{ jupyterlab }}
+    - jupyterlab >=${{ jupyterlab_min }},<${{ jupyterlab_max }}
     - hatch-jupyter-builder >=0.5
     - hatchling >=1.4.0
     - pip
@@ -29,7 +31,7 @@ requirements:
   run:
     - python >=${{ python_min }}
   run_constraints:
-    - ${{ jupyterlab }}
+    - jupyterlab >=${{ jupyterlab_min }},<${{ jupyterlab_max }}
 
 tests:
   - python:
@@ -37,7 +39,7 @@ tests:
       pip_check: true
       python_version:
         - ${{ python_min }}.*
-        - 3.13.*
+        - ${{ python_check_max }}.*
   - requirements:
       run:
         - jupyterlab
