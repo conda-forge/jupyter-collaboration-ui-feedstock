@@ -3,11 +3,13 @@ About jupyter-collaboration-ui-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/jupyter-collaboration-ui-feedstock/blob/main/LICENSE.txt)
 
-Home: https://github.com/jupyterlab/jupyter-collaboration
+Home: https://pypi.org/project/jupyter-collaboration-ui
 
 Package license: BSD-3-Clause
 
 Summary: JupyterLab/Jupyter Notebook 7+ extension providing user interface integration for real time collaboration
+
+Development: https://github.com/jupyterlab/jupyter-collaboration
 
 Documentation: https://jupyterlab-realtime-collaboration.readthedocs.io/
 
