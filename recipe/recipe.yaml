@@ -2,10 +2,11 @@
 schema_version: 1
 
 context:
-  version: "2.2.1"
-  jupyterlab_min: "4.4.0"
-  jupyterlab_max: "5"
+  version: "2.3.0"
+  jupyterlab_min: "4.5.0"
+  jupyterlab_max: "5.0"
   python_check_max: "3.14"
+  grep: ${{ 'grep -iE' if unix else 'findstr /c' }}
 
 package:
   name: jupyter-collaboration-ui
@@ -13,7 +14,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/j/jupyter-collaboration-ui/jupyter_collaboration_ui-${{ version }}.tar.gz
-  sha256: 2a9a8e990cf5d2ba78fa99334568691c46815eb729e17339256cc7a65262a196
+  sha256: 835e818614eb39645f2f583a57b2246d8d1ecff4ffd2d481ab4a6f6b2c45b997
 
 build:
   number: 0
@@ -46,7 +47,7 @@ tests:
     script:
       - pip check
       - jupyter labextension list --debug
-      - jupyter labextension list --debug 2>&1 | python -c "import re, sys; v = sys.stdin.read(); assert re.search(r'collaboration-extension.*OK', v)"
+      - jupyter labextension list --debug 2>&1 | ${{ grep }} "collaboration-extension.*OK"
 
 about:
   summary: JupyterLab/Jupyter Notebook 7+ extension providing user interface integration for real time collaboration
@@ -54,7 +55,8 @@ about:
   license_file:
     - LICENSE
     - jupyter_collaboration_ui/labextension/static/third-party-licenses.json
-  homepage: https://github.com/jupyterlab/jupyter-collaboration
+  homepage: https://pypi.org/project/jupyter-collaboration-ui
+  repository: https://github.com/jupyterlab/jupyter-collaboration
   documentation: https://jupyterlab-realtime-collaboration.readthedocs.io
 
 extra:
