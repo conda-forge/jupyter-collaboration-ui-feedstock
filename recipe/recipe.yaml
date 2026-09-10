@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: "3.0.2"
+  version: "3.0.3"
   jupyterlab_min: "4.6.0"
   jupyterlab_max: "4.7.0"
   python_check_max: "3.14"
@@ -14,7 +14,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/j/jupyter-collaboration-ui/jupyter_collaboration_ui-${{ version }}.tar.gz
-  sha256: 5f6a3a5846f9b4093a118576d76731fdf01add22fb1795a62b29fd3ddfdd1314
+  sha256: ae1ce7f75ea58249fb2b813ff51098633538821599bfa0d3798297fd9780f97d
 
 build:
   number: 0
